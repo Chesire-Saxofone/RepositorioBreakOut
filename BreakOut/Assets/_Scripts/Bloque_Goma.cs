@@ -10,12 +10,12 @@ public class Bloque_Goma : Bloque
         resistencia = 2; 
     }
 
-    public override void RebotarBola()
+    public override void RebotarBola(Collision collision)
     {
         //la bola tendrá un mayor rebote. Será un bloque de mayor
         //dificultad por lo que habrá pocos.
         //aun por implementar cuando aprenda sobre el metodo de rebote.
-        base.RebotarBola();
+        base.RebotarBola(collision);
     }
 
 }

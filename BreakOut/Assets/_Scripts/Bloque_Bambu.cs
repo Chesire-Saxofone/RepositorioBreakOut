@@ -11,8 +11,8 @@ public class Bloque_Bambu : Bloque
         resistencia = 4;
     }
 
-    public override void RebotarBola()
+    public override void RebotarBola(Collision collision)
     {
-        base.RebotarBola();
+        base.RebotarBola(collision);
     }
 }
