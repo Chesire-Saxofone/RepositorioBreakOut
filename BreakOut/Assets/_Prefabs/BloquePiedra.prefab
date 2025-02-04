@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1951794393549564821}
   - component: {fileID: 6215837715076433193}
   - component: {fileID: 2770397086156945504}
+  - component: {fileID: 1238719432311459731}
   m_Layer: 0
   m_Name: BloquePiedra
   m_TagString: Untagged
@@ -114,3 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1238719432311459731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6062205347876808502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100fcfb56a2fd9843a46276dca8040ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistencia: 1

@@ -9,8 +9,14 @@ public class Bloque_Diamante : Bloque
     {
         resistencia = 6;
     }
+
+    public override void RebotarBola(Collision collision)
+    {
+        base.RebotarBola(collision);
+    }
     /* deseo crear un metodo que permita destruir los bloques
      * adjacentes con una explosión el ser destruido. sin
      * Embargo tengo la duda de si debo hacerlo en este 
      * script o en la clase padre de Bloque*/
+
 }
