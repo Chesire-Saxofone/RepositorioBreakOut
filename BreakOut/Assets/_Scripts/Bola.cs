@@ -5,8 +5,10 @@ using UnityEngine.Events;
 
 public class Bola : MonoBehaviour
 {
+    public Opciones opciones;
+
     bool isTheGameStarted = false;
-    [SerializeField] public float velocidadBola = 10f;
+    [SerializeField] public float velocidadBola = 20f;
     Vector3 ultimaPosicion  = Vector3.zero;
     Vector3 direccion = Vector3.zero;
     Rigidbody rigidbody1;
@@ -32,9 +34,16 @@ public class Bola : MonoBehaviour
     void Update()
     {
 
+        if (opciones != null)
+        {
+            velocidadBola = opciones.velocidadBola;  // Tomar el valor desde opciones
+        }
+
         if (control.salioAbajo)
         {
-            BolaDestruida.Invoke();
+            if (BolaDestruida != null)
+                BolaDestruida.Invoke();
+
             Destroy(this.gameObject);
         }
         if (control.salioArriba)

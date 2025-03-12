@@ -6,9 +6,9 @@ using UnityEngine;
 public class Opciones : PuntajePersistente 
 {
     public float velocidadBola = 30;
-    public dificultad NivelDificultad = dificultad.facil;
+    public Dificultad NivelDificultad = Dificultad.facil;
 
-    public enum dificultad
+    public enum Dificultad
     {
         facil,
         normal,
@@ -20,8 +20,8 @@ public class Opciones : PuntajePersistente
         velocidadBola = nuevaVelocidad;
     }
     
-    public void CambiarDificultad(int nuevaDificultad)
+    public void CambiarDificultad(Dificultad nuevaDificultad)
     {
-        NivelDificultad = (dificultad)nuevaDificultad;
+        NivelDificultad = nuevaDificultad;
     }
 }
