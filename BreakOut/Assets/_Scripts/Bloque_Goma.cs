@@ -16,6 +16,11 @@ public class Bloque_Goma : Bloque
         //dificultad por lo que habrá pocos.
         //aun por implementar cuando aprenda sobre el metodo de rebote.
         base.RebotarBola(collision);
+        opciones.CambiarVelocidad(opciones.velocidadBola + 10);
     }
 
+    private void Update()
+    {
+        Incremento();
+    }
 }
