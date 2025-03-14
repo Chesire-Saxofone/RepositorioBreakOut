@@ -8,6 +8,7 @@ public class Bloque_Goma : Bloque
     void Start()
     {
         resistencia = 2; 
+        Incremento();
     }
 
     public override void RebotarBola(Collision collision)
@@ -16,11 +17,15 @@ public class Bloque_Goma : Bloque
         //dificultad por lo que habrá pocos.
         //aun por implementar cuando aprenda sobre el metodo de rebote.
         base.RebotarBola(collision);
-        opciones.CambiarVelocidad(opciones.velocidadBola + 10);
+        if (goma == false)
+        {
+            Debug.Log("Estamos en true");
+            goma = true;
+        }
     }
 
     private void Update()
     {
-        Incremento();
+        
     }
 }
