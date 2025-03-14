@@ -26,12 +26,19 @@ public class Bloque : MonoBehaviour
     {
         Vector3 direccion = collision.contacts[0].point - transform.position;
         direccion = direccion.normalized;
-        collision.rigidbody.velocity = collision.gameObject.GetComponent<Bola>().velocidadBola * direccion;
-        resistencia--;
+
+        if (goma == true)
+        {
+            collision.rigidbody.velocity = (collision.gameObject.GetComponent<Bola>().velocidadBola + 10) * direccion;
+        }
+        else
+        {
+            collision.rigidbody.velocity = collision.gameObject.GetComponent<Bola>().velocidadBola * direccion;
+        }
+            resistencia--;
         if (goma == true)
         {
             Debug.Log("Estamos en false");
-            opciones.velocidadBola -= 10f;
             goma = false;
         }
     }
@@ -63,7 +70,8 @@ public class Bloque : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        opciones.CambiarDificultad(Opciones.Dificultad.facil);
+        resistencia = 1;
+        Incremento();
     }
 
     // Update is called once per frame
@@ -74,8 +82,6 @@ public class Bloque : MonoBehaviour
             Destroy(this.gameObject);
             AumentarPuntaje.Invoke();
         }
-
-        Incremento();
     }
 
     public virtual void RebotarBola()

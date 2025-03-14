@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100fcfb56a2fd9843a46276dca8040ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opciones: {fileID: 11400000, guid: 4e8d0274fe972ab4a8f432982f3b534d, type: 2}
   resistencia: 1
   AumentarPuntaje:
     m_PersistentCalls:
@@ -143,3 +144,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  goma: 0

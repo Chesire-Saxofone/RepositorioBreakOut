@@ -127,4 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676c8184fc18a4d438701c97af56d419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opciones: {fileID: 11400000, guid: 4e8d0274fe972ab4a8f432982f3b534d, type: 2}
   resistencia: 1
+  AumentarPuntaje:
+    m_PersistentCalls:
+      m_Calls: []
+  goma: 0
