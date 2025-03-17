@@ -9,6 +9,7 @@ public class Bloque_Bambu : Bloque
     {
         //Es un Bloque Mas largo y con mas resistencia que la madera
         resistencia = 4;
+        Incremento();
     }
 
     public override void RebotarBola(Collision collision)
