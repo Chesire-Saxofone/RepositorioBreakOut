@@ -8,6 +8,7 @@ public class Bloque_Madera : Bloque
     void Start()
     {
         resistencia = 3;
+        Incremento();
     }
     public override void RebotarBola(Collision collision)
     {

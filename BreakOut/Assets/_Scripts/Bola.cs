@@ -27,6 +27,7 @@ public class Bola : MonoBehaviour
         this.transform.position = posicionInicial;
         this.transform.SetParent(GameObject.FindGameObjectWithTag("Jugador").transform);
         rigidbody1 = this.gameObject.GetComponent<Rigidbody>();
+        rigidbody1.velocity = Vector3.zero; // Asegurar que comienza en reposo
 
     }
 
@@ -47,7 +48,9 @@ public class Bola : MonoBehaviour
             Destroy(this.gameObject);
         }
         if (control.salioArriba)
-        { 
+        {
+
+
             direccion = transform.position - ultimaPosicion;
             Debug.Log("la bola tocó el borde superior");
             direccion.y *= -1;
@@ -59,6 +62,8 @@ public class Bola : MonoBehaviour
         }
         if (control.salioDerecha)
         {
+
+
             direccion = transform.position - ultimaPosicion;
             Debug.Log("la bola tocó el borde derecho");
             direccion.x *= -1;
@@ -68,6 +73,8 @@ public class Bola : MonoBehaviour
         }
         if (control.salioIzquierda)
         {
+
+
             direccion = transform.position - ultimaPosicion;
             Debug.Log("la bola tocó el borde izquierdo");
             direccion.x *= -1;
@@ -86,13 +93,23 @@ public class Bola : MonoBehaviour
         }
     }
 
+    private void Rebote(Vector3 nuevaDireccion)
+    {
+        nuevaDireccion = nuevaDireccion.normalized;
+        rigidbody1.velocity = nuevaDireccion * velocidadBola;
+    }
+
     private void HabilitarControl()
     {
         control.enabled = true;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if (direccion != Vector3.zero) direccion = Vector3.zero;
+    }
+    private void FixedUpdate()
+    {
+        ultimaPosicion = transform.position;
     }
 }

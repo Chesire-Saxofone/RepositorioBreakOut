@@ -8,6 +8,7 @@ public class Bloque_Diamante : Bloque
     void Start()
     {
         resistencia = 6;
+        Incremento();
     }
 
     public override void RebotarBola(Collision collision)

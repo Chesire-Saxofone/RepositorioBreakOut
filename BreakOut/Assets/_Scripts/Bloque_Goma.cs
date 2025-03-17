@@ -20,7 +20,6 @@ public class Bloque_Goma : Bloque
         if (goma == false)
         {
             Debug.Log("Estamos en true");
-            goma = true;
         }
     }
 
